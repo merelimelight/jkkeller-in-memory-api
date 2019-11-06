@@ -2,11 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const { ENVIRONMENT, PORT } = process.env;
+const IS_DEVELOPMENT = ENVIRONMENT === "development";
+
 // middleware
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000"
+    origin:
+      process.env.ENVIRONMENT === "development"
+        ? "http://localhost:3000"
+        : "http://sore-kittens.surge.sh/"
   })
 );
 
