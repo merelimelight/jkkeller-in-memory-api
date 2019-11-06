@@ -12,7 +12,7 @@ app.use(
     origin:
       process.env.ENVIRONMENT === "development"
         ? "http://localhost:3000"
-        : "http://sore-kittens.surge.sh/"
+        : "https://sore-kittens.surge.sh/"
   })
 );
 
