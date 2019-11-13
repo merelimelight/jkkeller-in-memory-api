@@ -9,10 +9,9 @@ const IS_DEVELOPMENT = ENVIRONMENT === "development";
 app.use(express.json());
 app.use(
   cors({
-    origin:
-      process.env.ENVIRONMENT === "development"
-        ? "http://localhost:3000"
-        : "https://sore-kittens.surge.sh/"
+    origin: IS_DEVELOPMENT
+      ? "http://localhost:3000"
+      : "https://sore-kittens.surge.sh/"
   })
 );
 
